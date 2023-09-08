@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -32,22 +33,64 @@ namespace ConsoleUI
             */
 
             // Create a list of Vehicle called vehicles
+            var vehicles = new List<Vehicle>();
 
-            /*
-             * Create 4 instances: 1 Car, 1 Motorcycle, and then 2 instances of type Vehicle (use explicit typing) but use constuctors from derived classes
-             * 
-             * Set the properties with object initializer syntax
-             */
+            Car car = new Car() { Year = 2008, Make = "Honda", Model = "Civic", HasTrunk = true };
 
-            /*
-             * Add the 4 vehicles to the list
-             * Using a foreach loop iterate over each of the properties
-             */
 
-            // Call each of the drive methods for one car and one motorcycle
+            Motorcycle motorcycle = new Motorcycle() { Year = 2016, Make = "Suzuki", Model = "Hayabusa", HasSideCart = false };
 
-            #endregion            
-            Console.ReadLine();
+
+            Vehicle vehicle1 = new Car() { Year = 1969, Make = "Dodge", Model = "Charger", HasTrunk = true };
+
+
+            Vehicle vehicle2 = new Motorcycle() { Year = 2018, Make = "Yamaha", Model = "Star Ventura", HasSideCart = true };
+
+
+            vehicles.Add(car);
+            vehicles.Add(motorcycle);
+            vehicles.Add(vehicle1);
+            vehicles.Add(vehicle2);
+
+            foreach (var vehicle in vehicles)
+            {
+                
+                Console.WriteLine($"Vehicle make: {vehicle.Make}");
+                Console.WriteLine($"Vehicle model:{vehicle.Model}");
+                Console.WriteLine($"Vehicle year: {vehicle.Year}");
+                Console.WriteLine();
+                Console.WriteLine();
+                
+            }
+            
+            Console.WriteLine($"It is {car.HasTrunk} that {car.Make} {car.Model}'s have trunks.");            
+            Console.WriteLine($"It is {motorcycle.HasSideCart} that {motorcycle.Make} {motorcycle.Model}'s have sidecarts because it is a sports bike.");
+            Console.WriteLine();
+            Console.WriteLine();
+            car.DriveAbstract();
+            motorcycle.DriveVirtual();
+            motorcycle.DriveAbstract();
+                /*
+                 * Create 4 instances: 1 Car, 1 Motorcycle, and then 2 instances of type Vehicle (use explicit typing) but use constuctors from derived classes
+                 * 
+                 * Set the properties with object initializer syntax
+                 */
+
+                /*
+                 * Add the 4 vehicles to the list
+                 * Using a foreach loop iterate over each of the properties
+                 */
+
+                // Call each of the drive methods for one car and one motorcycle
+
+                #endregion
+                Console.ReadLine();
+            
         }
+
     }
 }
+
+
+
+
