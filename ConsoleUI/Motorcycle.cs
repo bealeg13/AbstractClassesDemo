@@ -18,5 +18,13 @@ namespace ConsoleUI
         {
             Console.WriteLine("driving virtual for motorcycle");
         }
+
+        public override void PrintDetails()
+        {
+            Console.WriteLine($"This motorcycle has a sidecart {HasSideCart}");
+            Console.WriteLine($"Year: {Year}");
+            Console.WriteLine($"Make: {Make}");
+            Console.WriteLine($"Model: {Model}");
+        }
     }
 }

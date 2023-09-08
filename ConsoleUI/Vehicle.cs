@@ -17,5 +17,9 @@ namespace ConsoleUI
         {
             Console.WriteLine("drive virtual");
         }
+        public abstract void PrintDetails();
+        
+
+        
     }
 }

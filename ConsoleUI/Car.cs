@@ -14,5 +14,13 @@ namespace ConsoleUI
         {
             Console.WriteLine("driving abstract for cars");
         }
+
+        public override void PrintDetails()
+        {
+            Console.WriteLine($"This car has trunk {HasTrunk}");
+            Console.WriteLine($"Year: {Year}");
+            Console.WriteLine($"Make: {Make}");
+            Console.WriteLine($"Model: {Model}");
+        }
     }
 }
